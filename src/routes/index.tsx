@@ -259,7 +259,9 @@ function Workbench() {
                   <div className="text-base font-semibold text-foreground">接入应用健康度</div>
                   <div className="text-xs text-muted-foreground">OAuth Client 和业务应用的近期运行状态</div>
                 </div>
-                <Button variant="link" className="h-auto p-0 text-primary">管理 OAuth Client</Button>
+                <Button asChild variant="link" className="h-auto p-0 text-primary">
+                  <Link to="/apps/oauth-clients">管理 OAuth Client</Link>
+                </Button>
               </div>
               <ul className="divide-y">
                 {apps.map((a) => (
