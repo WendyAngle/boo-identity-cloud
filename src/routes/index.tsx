@@ -94,10 +94,14 @@ function Workbench() {
                 统一查看公司主体认证、OAuth 接入、登录流量和系统健康状态，把每天需要处理的事项收拢在一个页面。
               </p>
               <div className="mt-6 flex flex-wrap gap-2">
-                <Button className="gap-1">
-                  处理公司认证 <ArrowRight className="h-4 w-4" />
+                <Button asChild className="gap-1">
+                  <Link to="/companies/list">
+                    处理公司认证 <ArrowRight className="h-4 w-4" />
+                  </Link>
                 </Button>
-                <Button variant="secondary">查看产品授权</Button>
+                <Button asChild variant="secondary">
+                  <Link to="/apps/products">查看产品授权</Link>
+                </Button>
               </div>
             </div>
             <div className="flex items-center justify-center gap-6">
