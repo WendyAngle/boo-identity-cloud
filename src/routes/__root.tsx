@@ -84,6 +84,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:description", content: "企业统一认证中心：公司主体、OAuth 接入、账号与审计一体化管理。" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+    ],
     links: [
       {
         rel: "stylesheet",
