@@ -81,9 +81,9 @@ const menu: MenuItem[] = [
     url: "/system",
     icon: Settings,
     children: [
-      { title: "后台系统用户管理", url: "/system/users", icon: Users },
-      { title: "后台系统菜单管理", url: "/system/menus", icon: MenuIcon },
-      { title: "后台系统字典管理", url: "/system/dict", icon: BookMarked },
+      { title: "系统用户管理", url: "/system/users", icon: Users },
+      { title: "系统菜单管理", url: "/system/menus", icon: MenuIcon },
+      { title: "系统字典管理", url: "/system/dict", icon: BookMarked },
       
       { title: "协议与声明配置", url: "/system/agreements", icon: FileSignature },
     ],

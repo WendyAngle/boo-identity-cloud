@@ -77,7 +77,7 @@ const initialData: DictItem[] = [
 ];
 
 export const Route = createFileRoute("/system/dict")({
-  head: () => ({ meta: [{ title: "后台系统字典管理 — Boo Identity Cloud" }] }),
+  head: () => ({ meta: [{ title: "系统字典管理 — Boo Identity Cloud" }] }),
   component: DictPage,
 });
 
