@@ -664,15 +664,16 @@ function ProductEditDialog({
 }
 
 function FormRow({
-  label, required, max, value, onChange,
-}: { label: string; required?: boolean; max?: number; value?: string; onChange: (v: string) => void }) {
+  label, required, max, value, onChange, placeholder,
+}: { label: string; required?: boolean; max?: number; value?: string; onChange: (v: string) => void; placeholder?: string }) {
   return (
     <div className="grid grid-cols-[90px_1fr] items-center gap-3">
       <Label className="text-sm text-right text-muted-foreground">
         {required && <span className="text-rose-500 mr-0.5">*</span>}{label}
       </Label>
       <div className="relative">
-        <Input value={value ?? ""} onChange={(e) => onChange(max ? e.target.value.slice(0, max) : e.target.value)} />
+        <Input placeholder={placeholder} value={value ?? ""} onChange={(e) => onChange(max ? e.target.value.slice(0, max) : e.target.value)} />
+
         {max && (
           <span className="absolute right-2 top-1/2 -translate-y-1/2 text-xs text-muted-foreground pointer-events-none">
             {(value ?? "").length} / {max}
