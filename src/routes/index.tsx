@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   Users,
   Building2,
@@ -94,10 +94,14 @@ function Workbench() {
                 统一查看公司主体认证、OAuth 接入、登录流量和系统健康状态，把每天需要处理的事项收拢在一个页面。
               </p>
               <div className="mt-6 flex flex-wrap gap-2">
-                <Button className="gap-1">
-                  处理公司认证 <ArrowRight className="h-4 w-4" />
+                <Button asChild className="gap-1">
+                  <Link to="/companies/list">
+                    处理公司认证 <ArrowRight className="h-4 w-4" />
+                  </Link>
                 </Button>
-                <Button variant="secondary">查看产品授权</Button>
+                <Button asChild variant="secondary">
+                  <Link to="/apps/products">查看产品授权</Link>
+                </Button>
               </div>
             </div>
             <div className="flex items-center justify-center gap-6">
@@ -229,7 +233,9 @@ function Workbench() {
                   <div className="text-base font-semibold text-foreground">公司认证漏斗</div>
                   <div className="text-xs text-muted-foreground">企业从创建到可访问产品的关键节点</div>
                 </div>
-                <Button variant="link" className="h-auto p-0 text-primary">查看公司列表</Button>
+                <Button asChild variant="link" className="h-auto p-0 text-primary">
+                  <Link to="/companies/list">查看公司列表</Link>
+                </Button>
               </div>
               <ul className="space-y-4">
                 {funnel.map((f) => (
@@ -253,7 +259,9 @@ function Workbench() {
                   <div className="text-base font-semibold text-foreground">接入应用健康度</div>
                   <div className="text-xs text-muted-foreground">OAuth Client 和业务应用的近期运行状态</div>
                 </div>
-                <Button variant="link" className="h-auto p-0 text-primary">管理 OAuth Client</Button>
+                <Button asChild variant="link" className="h-auto p-0 text-primary">
+                  <Link to="/apps/oauth-clients">管理 OAuth Client</Link>
+                </Button>
               </div>
               <ul className="divide-y">
                 {apps.map((a) => (
