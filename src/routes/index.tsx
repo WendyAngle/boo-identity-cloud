@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
 import {
   Users,
   Building2,
@@ -77,6 +78,9 @@ const apps = [
 ];
 
 function Workbench() {
+  const [hiddenSeries, setHiddenSeries] = useState<Record<string, boolean>>({});
+  const toggleSeries = (key: string) =>
+    setHiddenSeries((prev) => ({ ...prev, [key]: !prev[key] }));
   return (
     <AppShell>
       <div className="space-y-4">
@@ -182,10 +186,28 @@ function Workbench() {
                     <XAxis dataKey="day" tick={{ fontSize: 12 }} axisLine={false} tickLine={false} />
                     <YAxis tick={{ fontSize: 12 }} axisLine={false} tickLine={false} />
                     <Tooltip />
-                    <Legend iconType="circle" />
-                    <Area type="monotone" dataKey="login" name="登录成功" stroke="oklch(0.65 0.15 230)" fill="url(#gLogin)" strokeWidth={2} />
-                    <Area type="monotone" dataKey="refresh" name="Token 刷新" stroke="oklch(0.72 0.17 155)" fill="transparent" strokeWidth={2} />
-                    <Area type="monotone" dataKey="fail" name="失败认证" stroke="oklch(0.75 0.16 55)" fill="transparent" strokeWidth={2} />
+                    <Legend
+                      iconType="circle"
+                      onClick={(e) => toggleSeries(String(e.dataKey))}
+                      formatter={(value, entry) => {
+                        const key = String((entry as { dataKey?: string })?.dataKey ?? "");
+                        const hidden = hiddenSeries[key];
+                        return (
+                          <span
+                            className="cursor-pointer select-none"
+                            style={{
+                              color: hidden ? "var(--muted-foreground)" : "inherit",
+                              textDecoration: hidden ? "line-through" : "none",
+                            }}
+                          >
+                            {value}
+                          </span>
+                        );
+                      }}
+                    />
+                    <Area type="monotone" dataKey="login" name="登录成功" stroke="oklch(0.65 0.15 230)" fill="url(#gLogin)" strokeWidth={2} hide={hiddenSeries.login} />
+                    <Area type="monotone" dataKey="refresh" name="Token 刷新" stroke="oklch(0.72 0.17 155)" fill="transparent" strokeWidth={2} hide={hiddenSeries.refresh} />
+                    <Area type="monotone" dataKey="fail" name="失败认证" stroke="oklch(0.75 0.16 55)" fill="transparent" strokeWidth={2} hide={hiddenSeries.fail} />
                   </AreaChart>
                 </ResponsiveContainer>
               </div>
