@@ -10,33 +10,167 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as SystemUsersRouteImport } from './routes/system.users'
+import { Route as SystemMenusRouteImport } from './routes/system.menus'
+import { Route as SystemDictRouteImport } from './routes/system.dict'
+import { Route as SystemDepartmentsRouteImport } from './routes/system.departments'
+import { Route as SystemAgreementsRouteImport } from './routes/system.agreements'
+import { Route as CompaniesListRouteImport } from './routes/companies.list'
+import { Route as AuditLogsRouteImport } from './routes/audit.logs'
+import { Route as AppsProductsRouteImport } from './routes/apps.products'
+import { Route as AppsOauthClientsRouteImport } from './routes/apps.oauth-clients'
+import { Route as AccountsListRouteImport } from './routes/accounts.list'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SystemUsersRoute = SystemUsersRouteImport.update({
+  id: '/system/users',
+  path: '/system/users',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SystemMenusRoute = SystemMenusRouteImport.update({
+  id: '/system/menus',
+  path: '/system/menus',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SystemDictRoute = SystemDictRouteImport.update({
+  id: '/system/dict',
+  path: '/system/dict',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SystemDepartmentsRoute = SystemDepartmentsRouteImport.update({
+  id: '/system/departments',
+  path: '/system/departments',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SystemAgreementsRoute = SystemAgreementsRouteImport.update({
+  id: '/system/agreements',
+  path: '/system/agreements',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CompaniesListRoute = CompaniesListRouteImport.update({
+  id: '/companies/list',
+  path: '/companies/list',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuditLogsRoute = AuditLogsRouteImport.update({
+  id: '/audit/logs',
+  path: '/audit/logs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppsProductsRoute = AppsProductsRouteImport.update({
+  id: '/apps/products',
+  path: '/apps/products',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppsOauthClientsRoute = AppsOauthClientsRouteImport.update({
+  id: '/apps/oauth-clients',
+  path: '/apps/oauth-clients',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AccountsListRoute = AccountsListRouteImport.update({
+  id: '/accounts/list',
+  path: '/accounts/list',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/accounts/list': typeof AccountsListRoute
+  '/apps/oauth-clients': typeof AppsOauthClientsRoute
+  '/apps/products': typeof AppsProductsRoute
+  '/audit/logs': typeof AuditLogsRoute
+  '/companies/list': typeof CompaniesListRoute
+  '/system/agreements': typeof SystemAgreementsRoute
+  '/system/departments': typeof SystemDepartmentsRoute
+  '/system/dict': typeof SystemDictRoute
+  '/system/menus': typeof SystemMenusRoute
+  '/system/users': typeof SystemUsersRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/accounts/list': typeof AccountsListRoute
+  '/apps/oauth-clients': typeof AppsOauthClientsRoute
+  '/apps/products': typeof AppsProductsRoute
+  '/audit/logs': typeof AuditLogsRoute
+  '/companies/list': typeof CompaniesListRoute
+  '/system/agreements': typeof SystemAgreementsRoute
+  '/system/departments': typeof SystemDepartmentsRoute
+  '/system/dict': typeof SystemDictRoute
+  '/system/menus': typeof SystemMenusRoute
+  '/system/users': typeof SystemUsersRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/accounts/list': typeof AccountsListRoute
+  '/apps/oauth-clients': typeof AppsOauthClientsRoute
+  '/apps/products': typeof AppsProductsRoute
+  '/audit/logs': typeof AuditLogsRoute
+  '/companies/list': typeof CompaniesListRoute
+  '/system/agreements': typeof SystemAgreementsRoute
+  '/system/departments': typeof SystemDepartmentsRoute
+  '/system/dict': typeof SystemDictRoute
+  '/system/menus': typeof SystemMenusRoute
+  '/system/users': typeof SystemUsersRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/accounts/list'
+    | '/apps/oauth-clients'
+    | '/apps/products'
+    | '/audit/logs'
+    | '/companies/list'
+    | '/system/agreements'
+    | '/system/departments'
+    | '/system/dict'
+    | '/system/menus'
+    | '/system/users'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/accounts/list'
+    | '/apps/oauth-clients'
+    | '/apps/products'
+    | '/audit/logs'
+    | '/companies/list'
+    | '/system/agreements'
+    | '/system/departments'
+    | '/system/dict'
+    | '/system/menus'
+    | '/system/users'
+  id:
+    | '__root__'
+    | '/'
+    | '/accounts/list'
+    | '/apps/oauth-clients'
+    | '/apps/products'
+    | '/audit/logs'
+    | '/companies/list'
+    | '/system/agreements'
+    | '/system/departments'
+    | '/system/dict'
+    | '/system/menus'
+    | '/system/users'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AccountsListRoute: typeof AccountsListRoute
+  AppsOauthClientsRoute: typeof AppsOauthClientsRoute
+  AppsProductsRoute: typeof AppsProductsRoute
+  AuditLogsRoute: typeof AuditLogsRoute
+  CompaniesListRoute: typeof CompaniesListRoute
+  SystemAgreementsRoute: typeof SystemAgreementsRoute
+  SystemDepartmentsRoute: typeof SystemDepartmentsRoute
+  SystemDictRoute: typeof SystemDictRoute
+  SystemMenusRoute: typeof SystemMenusRoute
+  SystemUsersRoute: typeof SystemUsersRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,22 +182,92 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/system/users': {
+      id: '/system/users'
+      path: '/system/users'
+      fullPath: '/system/users'
+      preLoaderRoute: typeof SystemUsersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/system/menus': {
+      id: '/system/menus'
+      path: '/system/menus'
+      fullPath: '/system/menus'
+      preLoaderRoute: typeof SystemMenusRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/system/dict': {
+      id: '/system/dict'
+      path: '/system/dict'
+      fullPath: '/system/dict'
+      preLoaderRoute: typeof SystemDictRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/system/departments': {
+      id: '/system/departments'
+      path: '/system/departments'
+      fullPath: '/system/departments'
+      preLoaderRoute: typeof SystemDepartmentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/system/agreements': {
+      id: '/system/agreements'
+      path: '/system/agreements'
+      fullPath: '/system/agreements'
+      preLoaderRoute: typeof SystemAgreementsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/companies/list': {
+      id: '/companies/list'
+      path: '/companies/list'
+      fullPath: '/companies/list'
+      preLoaderRoute: typeof CompaniesListRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/audit/logs': {
+      id: '/audit/logs'
+      path: '/audit/logs'
+      fullPath: '/audit/logs'
+      preLoaderRoute: typeof AuditLogsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/apps/products': {
+      id: '/apps/products'
+      path: '/apps/products'
+      fullPath: '/apps/products'
+      preLoaderRoute: typeof AppsProductsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/apps/oauth-clients': {
+      id: '/apps/oauth-clients'
+      path: '/apps/oauth-clients'
+      fullPath: '/apps/oauth-clients'
+      preLoaderRoute: typeof AppsOauthClientsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/accounts/list': {
+      id: '/accounts/list'
+      path: '/accounts/list'
+      fullPath: '/accounts/list'
+      preLoaderRoute: typeof AccountsListRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AccountsListRoute: AccountsListRoute,
+  AppsOauthClientsRoute: AppsOauthClientsRoute,
+  AppsProductsRoute: AppsProductsRoute,
+  AuditLogsRoute: AuditLogsRoute,
+  CompaniesListRoute: CompaniesListRoute,
+  SystemAgreementsRoute: SystemAgreementsRoute,
+  SystemDepartmentsRoute: SystemDepartmentsRoute,
+  SystemDictRoute: SystemDictRoute,
+  SystemMenusRoute: SystemMenusRoute,
+  SystemUsersRoute: SystemUsersRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

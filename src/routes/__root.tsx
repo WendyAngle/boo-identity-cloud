@@ -77,14 +77,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Boo Identity Cloud" },
+      { name: "description", content: "企业统一认证中心：公司主体、OAuth 接入、账号与审计一体化管理。" },
+      { name: "author", content: "Boo Identity Cloud" },
+      { property: "og:title", content: "Boo Identity Cloud" },
+      { property: "og:description", content: "企业统一认证中心：公司主体、OAuth 接入、账号与审计一体化管理。" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
