@@ -14,7 +14,7 @@ import {
   Users,
   Menu as MenuIcon,
   BookMarked,
-  Network,
+  
   FileSignature,
   Cloud,
 } from "lucide-react";
@@ -84,7 +84,7 @@ const menu: MenuItem[] = [
       { title: "后台系统用户管理", url: "/system/users", icon: Users },
       { title: "后台系统菜单管理", url: "/system/menus", icon: MenuIcon },
       { title: "后台系统字典管理", url: "/system/dict", icon: BookMarked },
-      { title: "后台系统部门管理", url: "/system/departments", icon: Network },
+      
       { title: "协议与声明配置", url: "/system/agreements", icon: FileSignature },
     ],
   },

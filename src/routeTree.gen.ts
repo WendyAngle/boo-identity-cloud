@@ -13,7 +13,6 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as SystemUsersRouteImport } from './routes/system.users'
 import { Route as SystemMenusRouteImport } from './routes/system.menus'
 import { Route as SystemDictRouteImport } from './routes/system.dict'
-import { Route as SystemDepartmentsRouteImport } from './routes/system.departments'
 import { Route as SystemAgreementsRouteImport } from './routes/system.agreements'
 import { Route as CompaniesListRouteImport } from './routes/companies.list'
 import { Route as AuditLogsRouteImport } from './routes/audit.logs'
@@ -39,11 +38,6 @@ const SystemMenusRoute = SystemMenusRouteImport.update({
 const SystemDictRoute = SystemDictRouteImport.update({
   id: '/system/dict',
   path: '/system/dict',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SystemDepartmentsRoute = SystemDepartmentsRouteImport.update({
-  id: '/system/departments',
-  path: '/system/departments',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SystemAgreementsRoute = SystemAgreementsRouteImport.update({
@@ -85,7 +79,6 @@ export interface FileRoutesByFullPath {
   '/audit/logs': typeof AuditLogsRoute
   '/companies/list': typeof CompaniesListRoute
   '/system/agreements': typeof SystemAgreementsRoute
-  '/system/departments': typeof SystemDepartmentsRoute
   '/system/dict': typeof SystemDictRoute
   '/system/menus': typeof SystemMenusRoute
   '/system/users': typeof SystemUsersRoute
@@ -98,7 +91,6 @@ export interface FileRoutesByTo {
   '/audit/logs': typeof AuditLogsRoute
   '/companies/list': typeof CompaniesListRoute
   '/system/agreements': typeof SystemAgreementsRoute
-  '/system/departments': typeof SystemDepartmentsRoute
   '/system/dict': typeof SystemDictRoute
   '/system/menus': typeof SystemMenusRoute
   '/system/users': typeof SystemUsersRoute
@@ -112,7 +104,6 @@ export interface FileRoutesById {
   '/audit/logs': typeof AuditLogsRoute
   '/companies/list': typeof CompaniesListRoute
   '/system/agreements': typeof SystemAgreementsRoute
-  '/system/departments': typeof SystemDepartmentsRoute
   '/system/dict': typeof SystemDictRoute
   '/system/menus': typeof SystemMenusRoute
   '/system/users': typeof SystemUsersRoute
@@ -127,7 +118,6 @@ export interface FileRouteTypes {
     | '/audit/logs'
     | '/companies/list'
     | '/system/agreements'
-    | '/system/departments'
     | '/system/dict'
     | '/system/menus'
     | '/system/users'
@@ -140,7 +130,6 @@ export interface FileRouteTypes {
     | '/audit/logs'
     | '/companies/list'
     | '/system/agreements'
-    | '/system/departments'
     | '/system/dict'
     | '/system/menus'
     | '/system/users'
@@ -153,7 +142,6 @@ export interface FileRouteTypes {
     | '/audit/logs'
     | '/companies/list'
     | '/system/agreements'
-    | '/system/departments'
     | '/system/dict'
     | '/system/menus'
     | '/system/users'
@@ -167,7 +155,6 @@ export interface RootRouteChildren {
   AuditLogsRoute: typeof AuditLogsRoute
   CompaniesListRoute: typeof CompaniesListRoute
   SystemAgreementsRoute: typeof SystemAgreementsRoute
-  SystemDepartmentsRoute: typeof SystemDepartmentsRoute
   SystemDictRoute: typeof SystemDictRoute
   SystemMenusRoute: typeof SystemMenusRoute
   SystemUsersRoute: typeof SystemUsersRoute
@@ -201,13 +188,6 @@ declare module '@tanstack/react-router' {
       path: '/system/dict'
       fullPath: '/system/dict'
       preLoaderRoute: typeof SystemDictRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/system/departments': {
-      id: '/system/departments'
-      path: '/system/departments'
-      fullPath: '/system/departments'
-      preLoaderRoute: typeof SystemDepartmentsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/system/agreements': {
@@ -263,7 +243,6 @@ const rootRouteChildren: RootRouteChildren = {
   AuditLogsRoute: AuditLogsRoute,
   CompaniesListRoute: CompaniesListRoute,
   SystemAgreementsRoute: SystemAgreementsRoute,
-  SystemDepartmentsRoute: SystemDepartmentsRoute,
   SystemDictRoute: SystemDictRoute,
   SystemMenusRoute: SystemMenusRoute,
   SystemUsersRoute: SystemUsersRoute,
