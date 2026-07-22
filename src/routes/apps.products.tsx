@@ -610,8 +610,8 @@ function ProductEditDialog({
           </AlertDescription>
         </Alert>
         <div className="space-y-3">
-          <FormRow label="产品名称" required max={64} value={form.name} onChange={(v) => setForm((f) => ({ ...f, name: v }))} />
-          <FormRow label="产品编码" required max={64} value={form.code} onChange={(v) => setForm((f) => ({ ...f, code: v }))} />
+          <FormRow label="产品名称" required max={64} placeholder="例如：采集平台" value={form.name} onChange={(v) => setForm((f) => ({ ...f, name: v }))} />
+          <FormRow label="产品编码" required max={64} placeholder="例如：gather" value={form.code} onChange={(v) => setForm((f) => ({ ...f, code: v }))} />
           <div className="grid grid-cols-[90px_1fr] items-center gap-3">
             <Label className="text-sm text-right text-muted-foreground">OAuth Client</Label>
             <Select value={form.oauthClientCode ?? ""} onValueChange={(v) => setForm((f) => ({ ...f, oauthClientCode: v }))}>
