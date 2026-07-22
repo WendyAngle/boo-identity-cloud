@@ -78,6 +78,9 @@ const apps = [
 ];
 
 function Workbench() {
+  const [hiddenSeries, setHiddenSeries] = useState<Record<string, boolean>>({});
+  const toggleSeries = (key: string) =>
+    setHiddenSeries((prev) => ({ ...prev, [key]: !prev[key] }));
   return (
     <AppShell>
       <div className="space-y-4">
