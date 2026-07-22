@@ -233,7 +233,9 @@ function Workbench() {
                   <div className="text-base font-semibold text-foreground">公司认证漏斗</div>
                   <div className="text-xs text-muted-foreground">企业从创建到可访问产品的关键节点</div>
                 </div>
-                <Button variant="link" className="h-auto p-0 text-primary">查看公司列表</Button>
+                <Button asChild variant="link" className="h-auto p-0 text-primary">
+                  <Link to="/companies/list">查看公司列表</Link>
+                </Button>
               </div>
               <ul className="space-y-4">
                 {funnel.map((f) => (
