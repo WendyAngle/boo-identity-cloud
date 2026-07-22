@@ -33,7 +33,7 @@ export const Route = createFileRoute("/")({
       { title: "工作台 — Boo Identity Cloud" },
       { name: "description", content: "认证中心工作台：公司主体认证、OAuth 接入、登录流量与系统健康状态。" },
       { property: "og:title", content: "工作台 — Boo Identity Cloud" },
-      { property: "og:description", content: "统一查看公司主体认证、OAuth 接入、登录流量和系统健康状态。" },
+      { property: "og:description", content: "认证中心工作台：公司主体认证、OAuth 接入、登录流量与系统健康状态。" },
     ],
   }),
   component: Workbench,

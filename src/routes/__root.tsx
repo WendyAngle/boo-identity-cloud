@@ -77,13 +77,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Boo Identity Cloud" },
-      { name: "description", content: "企业统一认证中心：公司主体、OAuth 接入、账号与审计一体化管理。" },
+      { title: "工作台 — Boo Identity Cloud" },
+      { name: "description", content: "认证中心工作台：公司主体认证、OAuth 接入、登录流量与系统健康状态。" },
       { name: "author", content: "Boo Identity Cloud" },
-      { property: "og:title", content: "Boo Identity Cloud" },
-      { property: "og:description", content: "企业统一认证中心：公司主体、OAuth 接入、账号与审计一体化管理。" },
+      { property: "og:title", content: "工作台 — Boo Identity Cloud" },
+      { property: "og:description", content: "认证中心工作台：公司主体认证、OAuth 接入、登录流量与系统健康状态。" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "工作台 — Boo Identity Cloud" },
+      { name: "twitter:description", content: "认证中心工作台：公司主体认证、OAuth 接入、登录流量与系统健康状态。" },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9bccb2c5-b45b-45ea-8d62-1d60fb6e742b/id-preview-3406c129--f9664b02-594a-473e-8cd1-faee8cd13896.lovable.app-1784690777174.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9bccb2c5-b45b-45ea-8d62-1d60fb6e742b/id-preview-3406c129--f9664b02-594a-473e-8cd1-faee8cd13896.lovable.app-1784690777174.png" },
     ],
     links: [
       {
