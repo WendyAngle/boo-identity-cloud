@@ -637,8 +637,9 @@ function ProductEditDialog({
               ))}
             </div>
           </div>
-          <FormRow label="负责人" value={form.owner} onChange={(v) => setForm((f) => ({ ...f, owner: v }))} />
-          <FormRow label="联系邮箱" value={form.email} onChange={(v) => setForm((f) => ({ ...f, email: v }))} />
+          <FormRow label="负责人" placeholder="产品或交付负责人" value={form.owner} onChange={(v) => setForm((f) => ({ ...f, owner: v }))} />
+          <FormRow label="联系邮箱" placeholder="owner@example.com" value={form.email} onChange={(v) => setForm((f) => ({ ...f, email: v }))} />
+
           <div className="grid grid-cols-[90px_1fr] items-start gap-3">
             <Label className="pt-2 text-sm text-right text-muted-foreground">说明</Label>
             <div className="relative">
