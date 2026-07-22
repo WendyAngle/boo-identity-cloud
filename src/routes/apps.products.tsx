@@ -610,8 +610,8 @@ function ProductEditDialog({
           </AlertDescription>
         </Alert>
         <div className="space-y-3">
-          <FormRow label="产品名称" required max={64} value={form.name} onChange={(v) => setForm((f) => ({ ...f, name: v }))} />
-          <FormRow label="产品编码" required max={64} value={form.code} onChange={(v) => setForm((f) => ({ ...f, code: v }))} />
+          <FormRow label="产品名称" required max={64} placeholder="例如：采集平台" value={form.name} onChange={(v) => setForm((f) => ({ ...f, name: v }))} />
+          <FormRow label="产品编码" required max={64} placeholder="例如：gather" value={form.code} onChange={(v) => setForm((f) => ({ ...f, code: v }))} />
           <div className="grid grid-cols-[90px_1fr] items-center gap-3">
             <Label className="text-sm text-right text-muted-foreground">OAuth Client</Label>
             <Select value={form.oauthClientCode ?? ""} onValueChange={(v) => setForm((f) => ({ ...f, oauthClientCode: v }))}>
@@ -637,8 +637,9 @@ function ProductEditDialog({
               ))}
             </div>
           </div>
-          <FormRow label="负责人" value={form.owner} onChange={(v) => setForm((f) => ({ ...f, owner: v }))} />
-          <FormRow label="联系邮箱" value={form.email} onChange={(v) => setForm((f) => ({ ...f, email: v }))} />
+          <FormRow label="负责人" placeholder="产品或交付负责人" value={form.owner} onChange={(v) => setForm((f) => ({ ...f, owner: v }))} />
+          <FormRow label="联系邮箱" placeholder="owner@example.com" value={form.email} onChange={(v) => setForm((f) => ({ ...f, email: v }))} />
+
           <div className="grid grid-cols-[90px_1fr] items-start gap-3">
             <Label className="pt-2 text-sm text-right text-muted-foreground">说明</Label>
             <div className="relative">
@@ -664,15 +665,16 @@ function ProductEditDialog({
 }
 
 function FormRow({
-  label, required, max, value, onChange,
-}: { label: string; required?: boolean; max?: number; value?: string; onChange: (v: string) => void }) {
+  label, required, max, value, onChange, placeholder,
+}: { label: string; required?: boolean; max?: number; value?: string; onChange: (v: string) => void; placeholder?: string }) {
   return (
     <div className="grid grid-cols-[90px_1fr] items-center gap-3">
       <Label className="text-sm text-right text-muted-foreground">
         {required && <span className="text-rose-500 mr-0.5">*</span>}{label}
       </Label>
       <div className="relative">
-        <Input value={value ?? ""} onChange={(e) => onChange(max ? e.target.value.slice(0, max) : e.target.value)} />
+        <Input placeholder={placeholder} value={value ?? ""} onChange={(e) => onChange(max ? e.target.value.slice(0, max) : e.target.value)} />
+
         {max && (
           <span className="absolute right-2 top-1/2 -translate-y-1/2 text-xs text-muted-foreground pointer-events-none">
             {(value ?? "").length} / {max}

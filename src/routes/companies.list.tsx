@@ -125,10 +125,11 @@ const seedCompanies: Company[] = [
     certStatus: "certified",
     memberCount: 2,
     productCount: 1,
-    contact: "刘孝平",
+    contact: "薛太",
     phone: "18982239220",
     createdAt: "2026-07-03 18:20:07",
-    members: [{ name: "刘孝平", account: "18982239220", role: "admin" }],
+    members: [{ name: "薛太", account: "18982239220", role: "admin" }],
+
     products: [{ code: "gts-prod-101", name: "gts采集-101", active: true }],
   },
   {
